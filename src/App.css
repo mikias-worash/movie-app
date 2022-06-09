@@ -14,7 +14,7 @@
 
 body {
   font-family: var(--font-roboto);
-  background-color: #212426;
+  background-color: #1d2d36;
 }
 
 .app {
@@ -28,7 +28,7 @@ body {
 
 h1 {
   font-size: 3rem;
-  letter-spacing: 0.9px;
+  letter-spacing: 1.1px;
   background: linear-gradient(
     90deg,
     rgba(249, 211, 180, 1) 0%,
@@ -100,7 +100,7 @@ h1 {
 
 .empty h2 {
   font-size: 1.25rem;
-  color: #f9d3b4;
+  color: #f07e62;
   font-family: var(--font-raleway);
 }
 
