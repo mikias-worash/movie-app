@@ -24,13 +24,18 @@ function App() {
 
   return (
     <div className="app">
-      <h1>MovieLand</h1>
+      <h1>Movies</h1>
 
       <div className="search">
         <input
-          placeholder="Search for Movies"
+          placeholder="Search for movies"
           value={searchTerm}
           onChange={(e) => setSearchTerm(e.target.value)}
+          onKeyUp={(e) =>
+            e.keyCode === 13
+              ? searchMovies(searchTerm)
+              : setSearchTerm(e.target.value)
+          }
         />
 
         <img
@@ -48,7 +53,7 @@ function App() {
         </div>
       ) : (
         <div className="empty">
-          <h2>No Movies found</h2>
+          <h2>We're Sorry, No matches found!</h2>
         </div>
       )}
     </div>
