@@ -18,8 +18,30 @@ function App() {
     setMovies(data.Search);
   };
 
+  const searchHomeMovies = async (titles) => {
+    let response, data;
+    let movieData = [];
+    for (let i = 0; i < titles.length; i++) {
+      response = await fetch(`${API_URL}&s=${titles[i]}`);
+      data = await response.json();
+      movieData[i] = data.Search[0];
+    }
+
+    setMovies(movieData);
+  };
+
   useEffect(() => {
-    searchMovies("Batman");
+    searchHomeMovies([
+      "Training day",
+      "dark knight",
+      "endgame",
+      "The shawshank redemption",
+      "Dune",
+      "No way home",
+      "Breaking bad",
+      "Rick and Morty",
+      "Friends",
+    ]);
   }, []);
 
   return (
